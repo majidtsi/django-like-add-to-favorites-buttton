@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>product</title>
+</head>
+<body>
+<h1> {{product}} </h1>
+
+
+{% if request.user in product.like.all %}
+    <a href="{% url 'like' product.id %}"> DisLike </a>
+{% else %}
+    <a href="{% url 'like' product.id %}"> Like </a>
+{% endif %}
+</body>
+</html>
